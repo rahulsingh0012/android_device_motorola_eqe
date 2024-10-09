@@ -64,16 +64,14 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_CONFIG := eqe_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/eqe
 firmware_class.path=/vendor/firmware_mnt/image \
-# For the love of all that is holy, please do not include this in your ROM unless you really want TWRP to not work correctly!
-BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 
-# BOARD_KERNEL_SEPARATED_DTBO := true
-# BOARD_INCLUDE_RECOVERY_DTBO := true
-# BOARD_INCLUDE_RECOVERY_DTB := true
+BOARD_KERNEL_SEPARATED_DTBO := true
+OARD_INCLUDE_RECOVERY_DTBO := true
+BOARD_INCLUDE_RECOVERY_DTB := true
 TARGET_KERNEL_SOURCE := kernel/motorola/eqe
 TARGET_KERNEL_CONFIG := vendor/eqe_defconfig
 
@@ -87,8 +85,8 @@ BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --second_offset $(BOARD_KERNEL_SECOND_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-# BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
-# BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -249,7 +247,7 @@ BUILD_BROKEN_USES_BUILD_HOST_EXECUTABLE := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # Kernel module loading
-TW_LOAD_VENDOR_MODULES := "leds_aw99703.ko leds-qpnp-flash-v2.ko ili9882_mmi.ko msm_drm.ko mmi_annotate.ko mmi_info.ko mmi_relay.ko mmi_charger.ko mmi_sys_temp.ko moto_f_mass_storage.ko sensors_class.ko touchscreen_mmi.ko stmicro_mmi.ko goodix_brl_mmi.ko sx937x_sar.ko bm_adsp_ulog.ko qti_glink_charger.ko qpnp_adaptive_charge.ko q6_pdr_dlkm.ko q6_notifier_dlkm.ko snd_event_dlkm.ko gpr_dlkm.ko spf_core_dlkm.ko adsp_loader_dlkm.ko"
+TW_LOAD_VENDOR_MODULES := "qpnp_adaptive_charge.ko mmi_annotate.ko mmi_info.ko mmi_sys_temp.ko mmi_charger.ko moto_f_usbnet.ko sensors_class.ko touchscreen_mmi.ko stmicro_mmi.ko goodix_brl_mmi.ko qpnp-pbs.ko qcom-hv-haptics.ko utags.ko"
 
 # Include decryption support
 TW_INCLUDE_CRYPTO := true
