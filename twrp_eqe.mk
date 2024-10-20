@@ -20,7 +20,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/motorola/eqe/device.mk)
 
 PRODUCT_DEVICE := eqe
-PRODUCT_NAME := twrp_eqe
+PRODUCT_NAME := fox_eqe
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := motorola edge 50 pro
 PRODUCT_MANUFACTURER := motorola
