@@ -6,6 +6,7 @@
 #
 
 DEVICE_PATH := device/motorola/eqe
+DEVICE_PREBUILT_PATH := device/motorola/eqe/prebuilt
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
