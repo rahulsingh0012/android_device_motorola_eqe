@@ -18,7 +18,7 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
-FDEVICE="gta9p"
+FDEVICE="eqe"
 #set -o xtrace
 
 fox_get_target_device() {
@@ -41,14 +41,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export ALLOW_MISSING_DEPENDENCIES=true
     export LC_ALL="C"
 # Maintaining Info
-    export OF_MAINTAINER=Crypton
+    export OF_MAINTAINER=Rahul_Singh
     export FOX_VERSION="R11.1"
     export FOX_BUILD_TYPE=beta
   	
 # Device Info
     export FOX_ARCH=arm64
     export FOX_VARIANT="12.1"
-    export TARGET_DEVICE_ALT="gta9p"
+    export TARGET_DEVICE_ALT="eqe"
   
 # Funtions
     export FOX_REPLACE_BUSYBOX_PS=1
